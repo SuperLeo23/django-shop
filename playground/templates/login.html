@@ -1,0 +1,14 @@
+{% include 'header.html' %}
+<h1>Log into your account</h1>
+<br>
+<div class="login">
+    <form action="../loginAPI" method="{{ method }}">
+        <label for="user">Username:</label>
+        <input type="text" name="username" id="user">
+        <br>
+        <label for="pass">Password:</label>
+        <input type="password" name="password" id="pass">
+        <br>
+        <input type="submit" name="" id="" value="Send">
+    </form>
+</div>

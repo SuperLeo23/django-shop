@@ -1,0 +1,14 @@
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>UltraNet</title>
+</head>
+{% with root="/playground" %}
+<ul>
+    <li><a href="{{ root }}">Home</a></li>
+    <li><a href="{{ root }}/reciept">Create</a></li>
+    <li><a href="{{ root }}/login">Login</a></li>
+    <li><a href="{{ root }}/logout">Logout</a></li>
+  </ul>
+{% endwith %}
+<br><br>

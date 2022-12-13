@@ -1,0 +1,83 @@
+:root{
+  --background: #FEFAEB;
+  --primary: #B1E3DB;
+  --text: #42504d;
+}
+
+html{
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Century Gothic';
+  background-color: var(--background);
+  color: var(--text);
+}
+
+h1{
+  text-align: center;
+}
+
+.card{
+  margin: 1em;
+  height: 100%;
+}
+
+.card-title-link{
+  color: var(--text);
+}
+.card-title-link:hover{
+  color: var(--text);
+  text-decoration: none;
+}
+
+.card-img-top{
+  width: 100%;
+}
+
+.login{
+  text-align: center;
+}
+
+.cart{
+  padding: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: var(--primary);
+  border-radius: 15px;
+}
+
+.checkoutImg{
+  width: 6em;
+  display: inline;
+  border-radius: 10px;
+}
+
+.payButton{
+  text-align: right;
+}
+/*
+  opacity: 0;
+  -moz-animation: cssAnimation 10s;
+  -webkit-animation: cssAnimation 10s;
+  -o-animation: cssAnimation 10s;
+  animation: cssAnimation 10s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+@keyframes cssAnimation {
+  99% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+@-webkit-keyframes cssAnimation {
+  99% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}

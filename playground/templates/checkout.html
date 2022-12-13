@@ -1,0 +1,32 @@
+{% load static %}
+{% include 'header.html' %}
+<h1>Your Shopping Cart</h1>
+<div class="cart">
+    {% if products %}
+        {% for item in products %}
+        <div style="display:inline-block;vertical-align:top;">
+            <img class="checkoutImg" src="/static/img/{{ item.image }}" alt="image of {{ item.name }}">
+        </div>
+        <div style="display:inline-block;">
+            <h3>&nbsp;{{ item.name }} - {{ item.price }}€</h3>
+            <h6>&nbsp;&nbsp;{{ item.description }}</h6>
+        </div>
+            <br>
+            <hr>
+        {% endfor %}
+    <h1>Total: {{ totalPrice }}€</h1>
+    {% include 'paypal.html' %}
+    <form action="/pay" method="get">
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br>
+    <small>Note: Unpaid orders will be cancelled!</small>
+    <div class="payButton"><input type="submit" class="btn btn-primary" value="Finish"></div>
+    {% else %}
+    <h3>Your cart is currently empty, browse for products <a href="/">here</a></h3>
+    {% endif %}
+</form>
+</div>
+<br>
+<br>
+{% include 'footer.html' %}

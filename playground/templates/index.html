@@ -1,0 +1,43 @@
+{% load static %}
+{% include 'header.html' %}
+{% if name %}
+<h1>Welcome back, {{name}}!</h1>
+{% else %}
+<h1>Welcome to {{ webName }}!</h1>
+{% endif %}
+<div class="row">
+{% for product in products %}
+<div class="col-sm">
+    <div class="card">
+      <a href="/product/?item={{ product.id }}"><img class="card-img-top" src="static/img/{{ product.image }}" alt="Card image cap"></a>
+      <div class="card-body">
+        <a class="card-title-link" href="/product/?item={{ product.id }}"><h5 class="card-title">{{ product.name }}</h5></a>
+        <p class="card-text">{{ product.description }}</p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{ product.price }}€ - Free Shipping</li>
+        </ul>
+          <br>
+          <form action="cartAPI" method="get">
+            <input type="hidden" name="name" value="{{ product.name }}">
+            <input type="hidden" name="description" value="{{ product.description }}">
+            <input type="hidden" name="price" value="{{ product.price }}">
+            <input type="hidden" name="image" value="{{ product.image }}">
+            <input type="submit" class="btn btn-primary" value="Add to cart">
+          </form>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+{% include 'modal.html' %}
+{% include 'footer.html' %}
+{% if showModal %}
+<script>
+  $('#toCartModal').modal('show');
+</script>  
+{% endif %}
+{% if orderConfirmedModal %}
+<script>
+  $('#orderConfirmedModal').modal('show');
+</script>  
+{% endif %}
